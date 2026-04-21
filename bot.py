@@ -11,7 +11,7 @@ from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 # ========== КОНФИГУРАЦИЯ ==========
 TOKEN = "vk1.a.6zb6lvt4Nhptg4aJ7QalVvlvd-6_0TNj91LqnM4dt1GvB2eD96UjIJlWEiSxV1p1DMisGAEdsyoV__zdT-v7uJT1n4MqcKIYAwy0tyq3Oa_N7ecSUQowfogmz1JFepj5vFfl52gZKk3Yk-KPduMKQ912zw4cG1I2WdzCx6nSQZ56rqaa5QMuDjguvU27m63Dbt59k4xfrJdxD19rs7KyQw"
 GROUP_ID = 237112108
-ADMIN_CHAT_ID = 2000000165?
+ADMIN_CHAT_ID = 2000000165
 ADMIN_IDS = [335745877] 
 EXCHANGE_RATE = 10
 NOTIFY_FARM_THRESHOLD = 50
