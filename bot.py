@@ -1,37 +1,3 @@
-import subprocess
-import sys
-import os
-
-# Автоматическая установка vk-api при запуске
-def install_package(package):
-    print(f"⏳ Установка {package}...")
-    try:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", package, "--break-system-packages"])
-        print(f"✅ {package} установлен!")
-        return True
-    except:
-        try:
-            subprocess.check_call([sys.executable, "-m", "pip", "install", package, "--user"])
-            print(f"✅ {package} установлен!")
-            return True
-        except:
-            print(f"❌ Не удалось установить {package}")
-            return False
-
-# Проверяем и устанавливаем vk-api
-try:
-    import vk_api
-    print("✅ vk_api уже установлен")
-except ImportError:
-    print("❌ vk_api не найден, начинаю установку...")
-    if install_package("vk-api"):
-        import vk_api
-        print("✅ vk_api успешно импортирован после установки")
-    else:
-        print("❌ КРИТИЧЕСКАЯ ОШИБКА: не удалось установить vk-api")
-        print("Пожалуйста, обратитесь в поддержку хостинга с просьбой установить: pip install vk-api")
-        sys.exit(1)
-        
 import vk_api
 import sqlite3
 import random
@@ -51,10 +17,26 @@ EXCHANGE_RATE = 10
 NOTIFY_FARM_THRESHOLD = 50
 # ==================================
 
+print("🤖 БОТ ЗАПУСКАЕТСЯ...")
+print(f"Токен: {TOKEN[:10]}...")
+print(f"Группа ID: {GROUP_ID}")
+
+# Проверка импорта
+try:
+    print("✅ vk_api импортирован")
+    print("✅ VkLongPoll импортирован")
+    print("✅ VkKeyboard импортирован")
+except NameError as e:
+    print(f"❌ Ошибка импорта: {e}")
+
 vk_session = vk_api.VkApi(token=TOKEN)
 vk = vk_session.get_api()
 longpoll = VkLongPoll(vk_session)
 
+print("✅ БОТ УСПЕШНО ЗАПУЩЕН!")
+print("━━━━━━━━━━━━━━━━━━━━━━━")
+print("Ожидание сообщений...")
+```
 temp_referrals = {}
 temp_purchases = {}
 user_withdraw_requests = {}
