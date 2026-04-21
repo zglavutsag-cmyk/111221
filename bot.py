@@ -36,7 +36,7 @@ longpoll = VkLongPoll(vk_session)
 print("✅ БОТ УСПЕШНО ЗАПУЩЕН!")
 print("━━━━━━━━━━━━━━━━━━━━━━━")
 print("Ожидание сообщений...")
-```
+
 temp_referrals = {}
 temp_purchases = {}
 user_withdraw_requests = {}
