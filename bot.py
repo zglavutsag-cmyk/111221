@@ -1,3 +1,16 @@
+import subprocess
+import sys
+
+# ПРИНУДИТЕЛЬНАЯ УСТАНОВКА
+try:
+    import vk_api
+    print("✅ vk_api уже есть")
+except ImportError:
+    print("⏳ Устанавливаю vk-api...")
+    subprocess.run([sys.executable, "-m", "pip", "install", "vk-api", "--break-system-packages"])
+    import vk_api
+    print("✅ vk_api установлен!")
+    
 import vk_api
 import sqlite3
 import random
